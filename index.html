@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AstroNosh - Galactic Grub</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Smooth scrolling and selection colors */
+        html { scroll-behavior: smooth; }
+        ::selection { background-color: #a855f7; color: white; }
+    </style>
+</head>
+<body class="min-h-screen bg-[#0B0F19] text-gray-200 font-sans pb-20">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-40 bg-[#0B0F19]/90 backdrop-blur-md border-b border-purple-900/50 p-4">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-3 cursor-pointer">
+                <img src="/images/logo.png" alt="AstroNosh Logo" class="w-12 h-12 rounded-full border-2 border-orange-500 shadow-[0_0_10px_#ed8936]" onerror="this.src='https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?auto=format&fit=crop&w=150&q=80'">
+                <span class="text-2xl font-bold bg-gradient-to-r from-purple-400 to-orange-400 bg-clip-text text-transparent uppercase tracking-wider">
+                    AstroNosh
+                </span>
+            </div>
+            <div class="hidden md:flex space-x-6 text-sm font-semibold tracking-widest text-purple-300">
+                <a href="#menu" class="hover:text-orange-400 transition-colors">MENU</a>
+                <a href="#events" class="hover:text-orange-400 transition-colors">EVENTS</a>
+                <a href="#merch" class="hover:text-orange-400 transition-colors">CREW GEAR</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero / Billboard Section -->
+    <header class="relative w-full max-w-6xl mx-auto mt-6 rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(159,122,234,0.3)] border border-purple-800">
+        <img src="/images/billboard.png" alt="AstroNosh Billboard" class="w-full h-[40vh] md:h-[60vh] object-cover object-center" onerror="this.src='https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1200&q=80'">
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0B0F19] via-transparent to-transparent flex flex-col justify-end p-8 md:p-12">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white drop-shadow-lg mb-2">
+                Galactic Grub.
+            </h1>
+            <p class="text-xl md:text-2xl text-orange-400 font-medium drop-shadow-md">
+                Earthly Cravings.
+            </p>
+        </div>
+    </header>
+
+    <!-- Interactive Menu Section -->
+    <main id="menu" class="max-w-6xl mx-auto mt-20 px-4">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 flex justify-center items-center gap-3">
+                <i data-lucide="rocket" class="text-orange-500"></i> 
+                Command Module Menu
+                <i data-lucide="rocket" class="text-orange-500 transform rotate-180"></i>
+            </h2>
+            <p class="text-purple-300">Click any item to scan its dietary coordinates & pricing.</p>
+        </div>
+
+        <!-- Adults Menu -->
+        <section class="mb-16">
+            <h3 class="text-2xl font-bold text-orange-400 border-b border-purple-800 pb-2 mb-6 flex items-center gap-2">
+                <i data-lucide="zap"></i> The Main Deck (Adults)
+            </h3>
+            <div id="adults-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Javascript will inject items here -->
+            </div>
+        </section>
+
+        <!-- Kids Menu -->
+        <section class="mb-16">
+            <h3 class="text-2xl font-bold text-purple-400 border-b border-purple-800 pb-2 mb-6 flex items-center gap-2">
+                <i data-lucide="star"></i> The Training Module (Kids)
+            </h3>
+            <div id="kids-container" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Javascript will inject items here -->
+            </div>
+        </section>
+
+        <!-- Drinks Menu -->
+        <section class="mb-16">
+            <h3 class="text-2xl font-bold text-blue-400 border-b border-purple-800 pb-2 mb-6 flex items-center gap-2">
+                <i data-lucide="coffee"></i> Liquid Fuel
+            </h3>
+            <div id="drinks-container" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Javascript will inject items here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Event & Food Truck Section -->
+    <section id="events" class="bg-[#121826] border-y border-purple-900/50 py-16 mt-12">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-white mb-6">Astro Nights at the Launch Pad</h2>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Join us every Friday and Saturday for live music, stargazing, and cosmic drinks at our Launch Pad patio. The perfect atmosphere to enjoy your Supernova Burger while searching for shooting stars!
+                    </p>
+                    <img src="/images/truck.png" alt="AstroNosh Food Truck" class="rounded-xl shadow-[0_0_20px_rgba(159,122,234,0.2)] border border-purple-800/50 w-full" onerror="this.src='https://images.unsplash.com/photo-1565123409695-7b5ef63a2efb?auto=format&fit=crop&w=800&q=80'">
+                </div>
+                <div class="flex justify-center">
+                    <img src="/images/flyer.png" alt="Event Flyer" class="w-full max-w-md rounded-2xl shadow-[0_0_30px_rgba(237,137,54,0.3)] transform hover:scale-105 transition-transform duration-300" onerror="this.src='https://images.unsplash.com/photo-1533174000255-b6eb3430eedc?auto=format&fit=crop&w=800&q=80'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Merch Section -->
+    <section id="merch" class="max-w-6xl mx-auto py-20 px-4">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-white mb-4">Official Crew Gear</h2>
+            <p class="text-purple-300">Look out of this world. Ask about purchasing our shirts at the truck!</p>
+        </div>
+        <div class="flex justify-center">
+            <img src="/images/shirts.png" alt="AstroNosh T-Shirts" class="w-full max-w-2xl rounded-2xl shadow-2xl border border-purple-800" onerror="this.src='https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=800&q=80'">
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center text-gray-500 py-8 border-t border-purple-900/30">
+        <p>© <span id="year"></span> AstroNosh. All rights reserved across the galaxy.</p>
+    </footer>
+
+    <!-- Interactive Modal (Hidden by default) -->
+    <div id="menu-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+        <div id="modal-content" class="relative bg-[#1A202C] w-full max-w-md rounded-2xl border border-purple-500 p-6 shadow-[0_0_50px_rgba(159,122,234,0.4)] transform scale-100 transition-transform">
+            
+            <button id="close-modal-btn" class="absolute top-4 right-4 text-gray-400 hover:text-white bg-gray-800 rounded-full p-1">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            
+            <h3 id="modal-title" class="text-2xl font-bold text-orange-400 pr-8 mb-2">Title</h3>
+            <p id="modal-desc" class="text-gray-300 mb-6 text-sm leading-relaxed">Description</p>
+            
+            <div class="bg-[#0B0F19] rounded-xl p-4 mb-6 border border-purple-900/50">
+                <h4 class="text-purple-300 text-xs font-bold uppercase tracking-widest mb-3 flex items-center gap-2">
+                    <i data-lucide="info" class="w-3.5 h-3.5"></i> Scanning Ingredients...
+                </h4>
+                <ul id="modal-ingredients" class="list-disc list-inside text-gray-200 text-sm space-y-1">
+                    <!-- Ingredients injected here -->
+                </ul>
+            </div>
+
+            <div class="flex justify-between items-center bg-purple-900/20 p-4 rounded-xl border border-purple-500/30">
+                <div>
+                    <span class="block text-xs text-purple-300 uppercase tracking-wider">Energy Output</span>
+                    <span id="modal-calories" class="text-lg font-bold text-white">0 kcal</span>
+                </div>
+                <div class="text-right">
+                    <span class="block text-xs text-purple-300 uppercase tracking-wider">Credits</span>
+                    <span id="modal-price" class="text-2xl font-black text-orange-400">$0.00</span>
+                </div>
+            </div>
+            
+            <button id="close-modal-btn-bottom" class="w-full mt-6 bg-gradient-to-r from-orange-500 to-red-500 text-white font-bold py-3 rounded-xl shadow-[0_0_15px_rgba(237,137,54,0.5)] hover:shadow-[0_0_25px_rgba(237,137,54,0.7)] transition-shadow">
+                Close Transmission
+            </button>
+        </div>
+    </div>
+
+    <!-- Application Logic -->
+    <script>
+        // Set current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Menu Data
+        const menuData = {
+            adults: [
+                {
+                    id: 'a1',
+                    name: 'The Supernova Burger',
+                    desc: 'A Wagyu beef patty ignites with "lava" habanero jack cheese, caramelized onions, and our signature spicy star-dust aioli, all nestled in a charcoal brioche bun.',
+                    ingredients: ['Wagyu Beef Patty', 'Habanero Jack Cheese', 'Caramelized Onions', 'Spicy Star-Dust Aioli', 'Charcoal Brioche Bun'],
+                    calories: 850,
+                    price: '$14.99'
+                },
+                {
+                    id: 'a2',
+                    name: 'Galactic Street Tacos',
+                    desc: 'Three corn tortillas, brimming with tender, citrus-marinated "Meteor" pork carnitas. Topped with tangy pickled purple cabbage and a vibrant neon-green avocado crema.',
+                    ingredients: ['Corn Tortillas', 'Citrus Pork Carnitas', 'Pickled Purple Cabbage', 'Avocado Crema', 'Fresh Cilantro'],
+                    calories: 620,
+                    price: '$11.99'
+                },
+                {
+                    id: 'a3',
+                    name: 'Zero-G Zoodles',
+                    desc: 'Fresh spiralized zucchini noodles gracefully tossed in a creamy "Milky Way" garlic alfredo sauce, adorned with sun-dried tomato "planets" and perfectly grilled shrimp.',
+                    ingredients: ['Spiralized Zucchini', 'Garlic Alfredo Sauce', 'Sun-dried Tomatoes', 'Grilled Shrimp', 'Parmesan Dust'],
+                    calories: 450,
+                    price: '$13.50'
+                },
+                {
+                    id: 'a4',
+                    name: 'The Asteroid Belt Sando',
+                    desc: 'A crispy fried chicken breast drenched in our fiery Nashville hot "solar" oil, perfectly balanced with crisp moon-rock pickles, all hugged by a toasted bun.',
+                    ingredients: ['Crispy Fried Chicken', 'Nashville Hot "Solar" Oil', 'Moon-Rock Pickles', 'Toasted Brioche Bun', 'Coleslaw'],
+                    calories: 780,
+                    price: '$12.99'
+                },
+                {
+                    id: 'a5',
+                    name: 'Orbital Poke Bowl',
+                    desc: 'Cubes of fresh Ahi tuna, crisp edamame "moons," sweet mango slices, and savory seaweed salad, all orbiting a wholesome bed of forbidden black rice.',
+                    ingredients: ['Ahi Tuna', 'Edamame', 'Mango Slices', 'Seaweed Salad', 'Forbidden Black Rice', 'Sesame Soy Glaze'],
+                    calories: 540,
+                    price: '$15.99'
+                },
+                {
+                    id: 'a6',
+                    name: 'Black Hole Brisket Fries',
+                    desc: 'A colossal pile of crispy waffle fries disappears under tender, slow-smoked brisket, then smothered in rich "dark matter" BBQ sauce and melted white cheddar.',
+                    ingredients: ['Waffle Fries', 'Slow-Smoked Brisket', '"Dark Matter" BBQ Sauce', 'Melted White Cheddar', 'Jalapeños'],
+                    calories: 1100,
+                    price: '$10.99'
+                }
+            ],
+            kids: [
+                {
+                    id: 'k1',
+                    name: 'Moon Cheese Sliders',
+                    desc: 'Two mini-burgers featuring creamy "moon" (Swiss) cheese, served with a side of golden "comet" fries.',
+                    ingredients: ['Beef Sliders', 'Swiss Cheese', 'Mini Buns', 'French Fries'],
+                    calories: 550,
+                    price: '$7.99'
+                },
+                {
+                    id: 'k2',
+                    name: 'Rocket Ship Nuggets',
+                    desc: 'Perfectly shaped star and rocket chicken breast nuggets, ready for launch with a dipping flight of classic BBQ, cool Ranch, and sweet Honey Mustard.',
+                    ingredients: ['Chicken Breast Nuggets', 'BBQ Sauce', 'Ranch Dressing', 'Honey Mustard'],
+                    calories: 480,
+                    price: '$6.99'
+                },
+                {
+                    id: 'k3',
+                    name: 'Saturn’s Rings',
+                    desc: 'A towering stack of extra-crispy, jumbo onion rings, served with a mild, creamy "nebula" dipping sauce.',
+                    ingredients: ['Jumbo Onion Rings', 'Crispy Batter', 'Creamy Nebula Sauce'],
+                    calories: 600,
+                    price: '$5.99'
+                }
+            ],
+            drinks: [
+                {
+                    id: 'd1',
+                    name: 'The Nebula Refresher',
+                    desc: 'A mesmerizing swirl of layered blackberry and tangy lemonade, sparkling with edible glitter.',
+                    ingredients: ['Blackberry Syrup', 'Lemonade', 'Edible Glitter', 'Ice'],
+                    calories: 210,
+                    price: '$4.99'
+                },
+                {
+                    id: 'd2',
+                    name: 'Rocket Fuel',
+                    desc: 'Our signature cold brew coffee, infused with a hint of salted caramel and topped with a cloud of frothy foam.',
+                    ingredients: ['Cold Brew Coffee', 'Salted Caramel Syrup', 'Sweet Cold Foam', 'Ice'],
+                    calories: 180,
+                    price: '$5.49'
+                }
+            ]
+        };
+
+        // Render Cards
+        function renderMenu(items, containerId) {
+            const container = document.getElementById(containerId);
+            items.forEach(item => {
+                const card = document.createElement('div');
+                card.className = "group bg-[#1A202C] border border-purple-900/50 hover:border-orange-500 rounded-xl p-5 cursor-pointer transition-all duration-300 hover:shadow-[0_0_20px_rgba(237,137,54,0.2)] hover:-translate-y-1 flex flex-col justify-between h-full";
+                
+                card.innerHTML = `
+                    <div>
+                        <h4 class="text-lg font-bold text-gray-100 group-hover:text-orange-400 transition-colors mb-2">${item.name}</h4>
+                        <p class="text-gray-400 text-sm line-clamp-3">${item.desc}</p>
+                    </div>
+                    <div class="mt-4 flex justify-between items-center border-t border-gray-800 pt-3">
+                        <span class="text-xs font-bold text-purple-400 tracking-wider uppercase">Scan for info</span>
+                        <span class="bg-gray-800 rounded-full p-2 group-hover:bg-orange-500/20 text-gray-400 group-hover:text-orange-400 transition-colors">
+                            <i data-lucide="info" class="w-4 h-4"></i>
+                        </span>
+                    </div>
+                `;
+
+                // Add click event for modal
+                card.addEventListener('click', () => openModal(item));
+                container.appendChild(card);
+            });
+        }
+
+        // Initialize Menu
+        renderMenu(menuData.adults, 'adults-container');
+        renderMenu(menuData.kids, 'kids-container');
+        renderMenu(menuData.drinks, 'drinks-container');
+
+        // Render Icons after DOM insertion
+        lucide.createIcons();
+
+        // Modal Logic
+        const modal = document.getElementById('menu-modal');
+        const modalContent = document.getElementById('modal-content');
+        
+        function openModal(item) {
+            document.getElementById('modal-title').textContent = item.name;
+            document.getElementById('modal-desc').textContent = item.desc;
+            document.getElementById('modal-calories').textContent = `${item.calories} kcal`;
+            document.getElementById('modal-price').textContent = item.price;
+            
+            const ingredientsList = document.getElementById('modal-ingredients');
+            ingredientsList.innerHTML = ''; // Clear previous
+            item.ingredients.forEach(ing => {
+                const li = document.createElement('li');
+                li.textContent = ing;
+                ingredientsList.appendChild(li);
+            });
+
+            // Show modal
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+
+        // Close Event Listeners
+        document.getElementById('close-modal-btn').addEventListener('click', closeModal);
+        document.getElementById('close-modal-btn-bottom').addEventListener('click', closeModal);
+        
+        // Close when clicking outside the modal box
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
